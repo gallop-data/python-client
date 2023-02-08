@@ -18,6 +18,7 @@ class PathValues(str, enum.Enum):
     DATA_ETH_GET_HISTORICAL_EVENTS = "/data/eth/getHistoricalEvents"
     DATA_ETH_GET_COLLECTION_OWNERS = "/data/eth/getCollectionOwners"
     DATA_ETH_GET_MARKETPLACE_FLOOR_PRICE = "/data/eth/getMarketplaceFloorPrice"
+    DATA_ETH_GET_ENS_LOOKUP = "/data/eth/getEnsLookup"
     DATA_SOL_GET_COLLECTIONS = "/data/sol/getCollections"
     DATA_SOL_GET_TOKENS = "/data/sol/getTokens"
     DATA_SOL_GET_COLLECTION_TRANSACTIONS = "/data/sol/getCollectionTransactions"

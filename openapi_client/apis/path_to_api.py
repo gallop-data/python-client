@@ -13,6 +13,7 @@ from openapi_client.apis.paths.data_eth_get_historical_transactions import DataE
 from openapi_client.apis.paths.data_eth_get_historical_events import DataEthGetHistoricalEvents
 from openapi_client.apis.paths.data_eth_get_collection_owners import DataEthGetCollectionOwners
 from openapi_client.apis.paths.data_eth_get_marketplace_floor_price import DataEthGetMarketplaceFloorPrice
+from openapi_client.apis.paths.data_eth_get_ens_lookup import DataEthGetEnsLookup
 from openapi_client.apis.paths.data_sol_get_collections import DataSolGetCollections
 from openapi_client.apis.paths.data_sol_get_tokens import DataSolGetTokens
 from openapi_client.apis.paths.data_sol_get_collection_transactions import DataSolGetCollectionTransactions
@@ -101,6 +102,7 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.DATA_ETH_GET_HISTORICAL_EVENTS: DataEthGetHistoricalEvents,
         PathValues.DATA_ETH_GET_COLLECTION_OWNERS: DataEthGetCollectionOwners,
         PathValues.DATA_ETH_GET_MARKETPLACE_FLOOR_PRICE: DataEthGetMarketplaceFloorPrice,
+        PathValues.DATA_ETH_GET_ENS_LOOKUP: DataEthGetEnsLookup,
         PathValues.DATA_SOL_GET_COLLECTIONS: DataSolGetCollections,
         PathValues.DATA_SOL_GET_TOKENS: DataSolGetTokens,
         PathValues.DATA_SOL_GET_COLLECTION_TRANSACTIONS: DataSolGetCollectionTransactions,
@@ -190,6 +192,7 @@ path_to_api = PathToApi(
         PathValues.DATA_ETH_GET_HISTORICAL_EVENTS: DataEthGetHistoricalEvents,
         PathValues.DATA_ETH_GET_COLLECTION_OWNERS: DataEthGetCollectionOwners,
         PathValues.DATA_ETH_GET_MARKETPLACE_FLOOR_PRICE: DataEthGetMarketplaceFloorPrice,
+        PathValues.DATA_ETH_GET_ENS_LOOKUP: DataEthGetEnsLookup,
         PathValues.DATA_SOL_GET_COLLECTIONS: DataSolGetCollections,
         PathValues.DATA_SOL_GET_TOKENS: DataSolGetTokens,
         PathValues.DATA_SOL_GET_COLLECTION_TRANSACTIONS: DataSolGetCollectionTransactions,

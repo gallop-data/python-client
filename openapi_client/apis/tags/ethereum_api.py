@@ -23,6 +23,7 @@ from openapi_client.paths.insights_eth_get_custom_collection_risk.post import Ge
 from openapi_client.paths.insights_eth_get_custom_token_risk.post import GetEthCustomTokenRisk
 from openapi_client.paths.insights_eth_get_default_collection_risk.post import GetEthDefaultCollectionRisk
 from openapi_client.paths.insights_eth_get_default_token_risk.post import GetEthDefaultTokenRisk
+from openapi_client.paths.data_eth_get_ens_lookup.post import GetEthEnsLookup
 from openapi_client.paths.data_eth_get_historical_events.post import GetEthHistoricalEvents
 from openapi_client.paths.data_eth_get_historical_transactions.post import GetEthHistoricalTransactions
 from openapi_client.paths.analytics_eth_get_leader_board.post import GetEthLeaderBoard
@@ -56,6 +57,7 @@ class EthereumApi(
     GetEthCustomTokenRisk,
     GetEthDefaultCollectionRisk,
     GetEthDefaultTokenRisk,
+    GetEthEnsLookup,
     GetEthHistoricalEvents,
     GetEthHistoricalTransactions,
     GetEthLeaderBoard,

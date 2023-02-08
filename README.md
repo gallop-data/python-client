@@ -196,6 +196,7 @@ Class | Method | HTTP request | Description
 *EthereumApi* | [**get_eth_custom_token_risk**](docs/apis/tags/EthereumApi.md#get_eth_custom_token_risk) | **post** /insights/eth/getCustomTokenRisk | Custom Volatility &amp; Risk Metrics by Token
 *EthereumApi* | [**get_eth_default_collection_risk**](docs/apis/tags/EthereumApi.md#get_eth_default_collection_risk) | **post** /insights/eth/getDefaultCollectionRisk | Default Volatility &amp; Risk Metrics by Collection
 *EthereumApi* | [**get_eth_default_token_risk**](docs/apis/tags/EthereumApi.md#get_eth_default_token_risk) | **post** /insights/eth/getDefaultTokenRisk | Default Volatility &amp; Risk Metrics by Token
+*EthereumApi* | [**get_eth_ens_lookup**](docs/apis/tags/EthereumApi.md#get_eth_ens_lookup) | **post** /data/eth/getEnsLookup | ENS Lookup
 *EthereumApi* | [**get_eth_historical_events**](docs/apis/tags/EthereumApi.md#get_eth_historical_events) | **post** /data/eth/getHistoricalEvents | Marketplace Activity by Collection
 *EthereumApi* | [**get_eth_historical_transactions**](docs/apis/tags/EthereumApi.md#get_eth_historical_transactions) | **post** /data/eth/getHistoricalTransactions | Historical Transactions by Collection
 *EthereumApi* | [**get_eth_leader_board**](docs/apis/tags/EthereumApi.md#get_eth_leader_board) | **post** /analytics/eth/getLeaderBoard | Ethereum Leaderboard by Collection
