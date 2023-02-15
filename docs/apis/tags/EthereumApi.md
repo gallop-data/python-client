@@ -7,7 +7,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_eth_collection_floor_price_ohlc**](#get_eth_collection_floor_price_ohlc) | **post** /analytics/eth/getCollectionFloorPriceOHLC | Intraday Marketplace Floor Price by Collection
 [**get_eth_collection_forecasts**](#get_eth_collection_forecasts) | **post** /insights/eth/getCollectionForecasts | Price Forecast by Collection
-[**get_eth_collection_listings_ohlc**](#get_eth_collection_listings_ohlc) | **post** /analytics/eth/getCollectionListingsOHLC | Collection Price Listings Candlesticks
+[**get_eth_collection_listings_ohlc**](#get_eth_collection_listings_ohlc) | **post** /analytics/eth/getCollectionListingsOHLC | Collection Floor Price and Listings Candlesticks
 [**get_eth_collection_owners**](#get_eth_collection_owners) | **post** /data/eth/getCollectionOwners | Wallet Owners by Collection
 [**get_eth_collection_price_diff**](#get_eth_collection_price_diff) | **post** /analytics/eth/getCollectionPriceDiff | Price Differentiation by Trait
 [**get_eth_collection_sales_ohlc**](#get_eth_collection_sales_ohlc) | **post** /analytics/eth/getCollectionSalesOHLC | Collection Sales Price Candlesticks
@@ -334,9 +334,9 @@ headers | Unset | headers were not defined |
 <a name="get_eth_collection_listings_ohlc"></a>
 > get_eth_collection_listings_ohlc()
 
-Collection Price Listings Candlesticks
+Collection Floor Price and Listings Candlesticks
 
-Returns open, high, low, close candlesticks for collection listings at marketplaces at a selected time interval, as well as the number of active listings and the number of unique owners
+Returns historical floor price or more extensive open / high / floor / close candlesticks for collection listings at marketplaces at a selected time interval, as well as the number of active listings, the number of unique owners and the average age of open listings
 
 ### Example
 
@@ -369,15 +369,14 @@ with openapi_client.ApiClient(configuration) as api_client:
     # example passing only optional values
     body = dict(
         collection_address="0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7",
+        floor_only=True,
         frequency="1D",
         rept_curr="eth",
-        listing_start_date="2021-08-01",
-        listing_end_date="2023-03-04",
         report_start_date="2023-01-01",
         report_end_date="2023-01-04",
     )
     try:
-        # Collection Price Listings Candlesticks
+        # Collection Floor Price and Listings Candlesticks
         api_response = api_instance.get_eth_collection_listings_ohlc(
             body=body,
         )
@@ -408,10 +407,9 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
 **collection_address** | str,  | str,  | The Ethereum contract address to identify the collection. | 
-**frequency** | str,  | str,  | The interval at which to return OHLC, e.g. &#x60;1D&#x60; for daily, &#x60;1M&#x60; for monthly etc. | [optional] 
+**floor_only** | bool,  | BoolClass,  | If &#x60;true&#x60;, report only historical floor prices. Otherwise, report OHFC candlesticks, number of active listings, number of unique owners and the average age of open listings. | [optional] 
+**frequency** | str,  | str,  | The interval at which to return Floor prices / OHLF, e.g. &#x60;1D&#x60; for daily, &#x60;1M&#x60; for monthly etc. Must be &gt;&#x3D; &#x60;6H&#x60; | [optional] 
 **rept_curr** | str,  | str,  | The currency to report results in | [optional] must be one of ["eth", "usd", ] 
-**listing_start_date** | str,  | str,  | The ISO 8601 date/datetime of the oldest listing to pull for calculations | [optional] 
-**listing_end_date** | str,  | str,  | The ISO 8601 date/datetime of the most recent listing to pull for calculations | [optional] 
 **report_start_date** | str,  | str,  | The ISO 8601 start date/datetime to return results for | [optional] 
 **report_end_date** | str,  | str,  | The ISO 8601 end date/datetime to return results for | [optional] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]

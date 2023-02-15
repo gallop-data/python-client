@@ -40,6 +40,7 @@ class SchemaForRequestBodyApplicationJson(
         
         class properties:
             collection_address = schemas.StrSchema
+            floor_only = schemas.BoolSchema
             frequency = schemas.StrSchema
             
             
@@ -55,16 +56,13 @@ class SchemaForRequestBodyApplicationJson(
                 @schemas.classproperty
                 def USD(cls):
                     return cls("usd")
-            listing_start_date = schemas.StrSchema
-            listing_end_date = schemas.StrSchema
             report_start_date = schemas.StrSchema
             report_end_date = schemas.StrSchema
             __annotations__ = {
                 "collection_address": collection_address,
+                "floor_only": floor_only,
                 "frequency": frequency,
                 "rept_curr": rept_curr,
-                "listing_start_date": listing_start_date,
-                "listing_end_date": listing_end_date,
                 "report_start_date": report_start_date,
                 "report_end_date": report_end_date,
             }
@@ -75,16 +73,13 @@ class SchemaForRequestBodyApplicationJson(
     def __getitem__(self, name: typing_extensions.Literal["collection_address"]) -> MetaOapg.properties.collection_address: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["floor_only"]) -> MetaOapg.properties.floor_only: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["frequency"]) -> MetaOapg.properties.frequency: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["rept_curr"]) -> MetaOapg.properties.rept_curr: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["listing_start_date"]) -> MetaOapg.properties.listing_start_date: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["listing_end_date"]) -> MetaOapg.properties.listing_end_date: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["report_start_date"]) -> MetaOapg.properties.report_start_date: ...
@@ -95,7 +90,7 @@ class SchemaForRequestBodyApplicationJson(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["collection_address", "frequency", "rept_curr", "listing_start_date", "listing_end_date", "report_start_date", "report_end_date", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["collection_address", "floor_only", "frequency", "rept_curr", "report_start_date", "report_end_date", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -104,16 +99,13 @@ class SchemaForRequestBodyApplicationJson(
     def get_item_oapg(self, name: typing_extensions.Literal["collection_address"]) -> MetaOapg.properties.collection_address: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["floor_only"]) -> typing.Union[MetaOapg.properties.floor_only, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["frequency"]) -> typing.Union[MetaOapg.properties.frequency, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["rept_curr"]) -> typing.Union[MetaOapg.properties.rept_curr, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["listing_start_date"]) -> typing.Union[MetaOapg.properties.listing_start_date, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["listing_end_date"]) -> typing.Union[MetaOapg.properties.listing_end_date, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["report_start_date"]) -> typing.Union[MetaOapg.properties.report_start_date, schemas.Unset]: ...
@@ -124,7 +116,7 @@ class SchemaForRequestBodyApplicationJson(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["collection_address", "frequency", "rept_curr", "listing_start_date", "listing_end_date", "report_start_date", "report_end_date", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["collection_address", "floor_only", "frequency", "rept_curr", "report_start_date", "report_end_date", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -132,10 +124,9 @@ class SchemaForRequestBodyApplicationJson(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
         collection_address: typing.Union[MetaOapg.properties.collection_address, str, ],
+        floor_only: typing.Union[MetaOapg.properties.floor_only, bool, schemas.Unset] = schemas.unset,
         frequency: typing.Union[MetaOapg.properties.frequency, str, schemas.Unset] = schemas.unset,
         rept_curr: typing.Union[MetaOapg.properties.rept_curr, str, schemas.Unset] = schemas.unset,
-        listing_start_date: typing.Union[MetaOapg.properties.listing_start_date, str, schemas.Unset] = schemas.unset,
-        listing_end_date: typing.Union[MetaOapg.properties.listing_end_date, str, schemas.Unset] = schemas.unset,
         report_start_date: typing.Union[MetaOapg.properties.report_start_date, str, schemas.Unset] = schemas.unset,
         report_end_date: typing.Union[MetaOapg.properties.report_end_date, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
@@ -145,10 +136,9 @@ class SchemaForRequestBodyApplicationJson(
             cls,
             *_args,
             collection_address=collection_address,
+            floor_only=floor_only,
             frequency=frequency,
             rept_curr=rept_curr,
-            listing_start_date=listing_start_date,
-            listing_end_date=listing_end_date,
             report_start_date=report_start_date,
             report_end_date=report_end_date,
             _configuration=_configuration,
@@ -271,7 +261,7 @@ class BaseApi(api_client.Api):
         skip_deserialization: bool = False,
     ):
         """
-        Collection Price Listings Candlesticks
+        Collection Floor Price and Listings Candlesticks
         :param skip_deserialization: If true then api_response.response will be set but
             api_response.body and api_response.headers will not be deserialized into schema
             class instances

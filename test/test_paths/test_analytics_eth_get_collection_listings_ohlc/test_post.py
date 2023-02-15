@@ -21,7 +21,7 @@ from .. import ApiTestMixin
 class TestAnalyticsEthGetCollectionListingsOHLC(ApiTestMixin, unittest.TestCase):
     """
     AnalyticsEthGetCollectionListingsOHLC unit test stubs
-        Collection Price Listings Candlesticks  # noqa: E501
+        Collection Floor Price and Listings Candlesticks  # noqa: E501
     """
     _configuration = configuration.Configuration()
 

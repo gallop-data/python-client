@@ -185,7 +185,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *EthereumApi* | [**get_eth_collection_floor_price_ohlc**](docs/apis/tags/EthereumApi.md#get_eth_collection_floor_price_ohlc) | **post** /analytics/eth/getCollectionFloorPriceOHLC | Intraday Marketplace Floor Price by Collection
 *EthereumApi* | [**get_eth_collection_forecasts**](docs/apis/tags/EthereumApi.md#get_eth_collection_forecasts) | **post** /insights/eth/getCollectionForecasts | Price Forecast by Collection
-*EthereumApi* | [**get_eth_collection_listings_ohlc**](docs/apis/tags/EthereumApi.md#get_eth_collection_listings_ohlc) | **post** /analytics/eth/getCollectionListingsOHLC | Collection Price Listings Candlesticks
+*EthereumApi* | [**get_eth_collection_listings_ohlc**](docs/apis/tags/EthereumApi.md#get_eth_collection_listings_ohlc) | **post** /analytics/eth/getCollectionListingsOHLC | Collection Floor Price and Listings Candlesticks
 *EthereumApi* | [**get_eth_collection_owners**](docs/apis/tags/EthereumApi.md#get_eth_collection_owners) | **post** /data/eth/getCollectionOwners | Wallet Owners by Collection
 *EthereumApi* | [**get_eth_collection_price_diff**](docs/apis/tags/EthereumApi.md#get_eth_collection_price_diff) | **post** /analytics/eth/getCollectionPriceDiff | Price Differentiation by Trait
 *EthereumApi* | [**get_eth_collection_sales_ohlc**](docs/apis/tags/EthereumApi.md#get_eth_collection_sales_ohlc) | **post** /analytics/eth/getCollectionSalesOHLC | Collection Sales Price Candlesticks
