@@ -85,9 +85,11 @@ class SchemaForRequestBodyApplicationJson(
             
                 def __getitem__(self, i: int) -> MetaOapg.items:
                     return super().__getitem__(i)
+            normalized = schemas.BoolSchema
             __annotations__ = {
                 "collection_address": collection_address,
                 "sub_collection_tags": sub_collection_tags,
+                "normalized": normalized,
             }
     
     collection_address: MetaOapg.properties.collection_address
@@ -99,9 +101,12 @@ class SchemaForRequestBodyApplicationJson(
     def __getitem__(self, name: typing_extensions.Literal["sub_collection_tags"]) -> MetaOapg.properties.sub_collection_tags: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["normalized"]) -> MetaOapg.properties.normalized: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["collection_address", "sub_collection_tags", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["collection_address", "sub_collection_tags", "normalized", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -113,9 +118,12 @@ class SchemaForRequestBodyApplicationJson(
     def get_item_oapg(self, name: typing_extensions.Literal["sub_collection_tags"]) -> typing.Union[MetaOapg.properties.sub_collection_tags, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["normalized"]) -> typing.Union[MetaOapg.properties.normalized, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["collection_address", "sub_collection_tags", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["collection_address", "sub_collection_tags", "normalized", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -124,6 +132,7 @@ class SchemaForRequestBodyApplicationJson(
         *_args: typing.Union[dict, frozendict.frozendict, ],
         collection_address: typing.Union[MetaOapg.properties.collection_address, list, tuple, ],
         sub_collection_tags: typing.Union[MetaOapg.properties.sub_collection_tags, list, tuple, schemas.Unset] = schemas.unset,
+        normalized: typing.Union[MetaOapg.properties.normalized, bool, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'SchemaForRequestBodyApplicationJson':
@@ -132,6 +141,7 @@ class SchemaForRequestBodyApplicationJson(
             *_args,
             collection_address=collection_address,
             sub_collection_tags=sub_collection_tags,
+            normalized=normalized,
             _configuration=_configuration,
             **kwargs,
         )

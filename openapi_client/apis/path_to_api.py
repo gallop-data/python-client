@@ -71,6 +71,7 @@ from openapi_client.apis.paths.insights_eth_get_collection_forecasts import Insi
 from openapi_client.apis.paths.insights_eth_get_token_forecasts import InsightsEthGetTokenForecasts
 from openapi_client.apis.paths.insights_eth_get_token_appraisal import InsightsEthGetTokenAppraisal
 from openapi_client.apis.paths.insights_eth_get_wallet_labels import InsightsEthGetWalletLabels
+from openapi_client.apis.paths.insights_eth_get_wallet_valuation import InsightsEthGetWalletValuation
 from openapi_client.apis.paths.insights_sol_get_custom_collection_risk import InsightsSolGetCustomCollectionRisk
 from openapi_client.apis.paths.insights_sol_get_custom_token_risk import InsightsSolGetCustomTokenRisk
 from openapi_client.apis.paths.insights_sol_get_default_collection_risk import InsightsSolGetDefaultCollectionRisk
@@ -160,6 +161,7 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.INSIGHTS_ETH_GET_TOKEN_FORECASTS: InsightsEthGetTokenForecasts,
         PathValues.INSIGHTS_ETH_GET_TOKEN_APPRAISAL: InsightsEthGetTokenAppraisal,
         PathValues.INSIGHTS_ETH_GET_WALLET_LABELS: InsightsEthGetWalletLabels,
+        PathValues.INSIGHTS_ETH_GET_WALLET_VALUATION: InsightsEthGetWalletValuation,
         PathValues.INSIGHTS_SOL_GET_CUSTOM_COLLECTION_RISK: InsightsSolGetCustomCollectionRisk,
         PathValues.INSIGHTS_SOL_GET_CUSTOM_TOKEN_RISK: InsightsSolGetCustomTokenRisk,
         PathValues.INSIGHTS_SOL_GET_DEFAULT_COLLECTION_RISK: InsightsSolGetDefaultCollectionRisk,
@@ -250,6 +252,7 @@ path_to_api = PathToApi(
         PathValues.INSIGHTS_ETH_GET_TOKEN_FORECASTS: InsightsEthGetTokenForecasts,
         PathValues.INSIGHTS_ETH_GET_TOKEN_APPRAISAL: InsightsEthGetTokenAppraisal,
         PathValues.INSIGHTS_ETH_GET_WALLET_LABELS: InsightsEthGetWalletLabels,
+        PathValues.INSIGHTS_ETH_GET_WALLET_VALUATION: InsightsEthGetWalletValuation,
         PathValues.INSIGHTS_SOL_GET_CUSTOM_COLLECTION_RISK: InsightsSolGetCustomCollectionRisk,
         PathValues.INSIGHTS_SOL_GET_CUSTOM_TOKEN_RISK: InsightsSolGetCustomTokenRisk,
         PathValues.INSIGHTS_SOL_GET_DEFAULT_COLLECTION_RISK: InsightsSolGetDefaultCollectionRisk,

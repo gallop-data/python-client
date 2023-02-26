@@ -39,6 +39,7 @@ from openapi_client.paths.data_eth_get_tokens.post import GetEthTokens
 from openapi_client.paths.insights_eth_get_wallet_labels.post import GetEthWalletLabels
 from openapi_client.paths.data_eth_get_wallet_nfts.post import GetEthWalletNfts
 from openapi_client.paths.data_eth_get_wallet_transactions.post import GetEthWalletTransactions
+from openapi_client.paths.insights_eth_get_wallet_valuation.post import GetEthWalletValuation
 from openapi_client.paths.analytics_eth_get_wash_trade.post import GetEthWashTrade
 from openapi_client.paths.analytics_eth_get_wash_transactions.post import GetEthWashTransactions
 
@@ -73,6 +74,7 @@ class EthereumApi(
     GetEthWalletLabels,
     GetEthWalletNfts,
     GetEthWalletTransactions,
+    GetEthWalletValuation,
     GetEthWashTrade,
     GetEthWashTransactions,
 ):

@@ -25,8 +25,6 @@ import frozendict  # noqa: F401
 
 from openapi_client import schemas  # noqa: F401
 
-from . import path
-
 # body param
 
 
@@ -37,113 +35,49 @@ class SchemaForRequestBodyApplicationJson(
 
     class MetaOapg:
         required = {
-            "collection_address",
+            "wallet_address",
         }
         
         class properties:
-            
-            
-            class collection_address(
-                schemas.ListSchema
-            ):
-            
-            
-                class MetaOapg:
-                    items = schemas.StrSchema
-            
-                def __new__(
-                    cls,
-                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'collection_address':
-                    return super().__new__(
-                        cls,
-                        _arg,
-                        _configuration=_configuration,
-                    )
-            
-                def __getitem__(self, i: int) -> MetaOapg.items:
-                    return super().__getitem__(i)
-            
-            
-            class sub_collection_tags(
-                schemas.ListSchema
-            ):
-            
-            
-                class MetaOapg:
-                    items = schemas.StrSchema
-            
-                def __new__(
-                    cls,
-                    _arg: typing.Union[typing.Tuple[typing.Union[MetaOapg.items, str, ]], typing.List[typing.Union[MetaOapg.items, str, ]]],
-                    _configuration: typing.Optional[schemas.Configuration] = None,
-                ) -> 'sub_collection_tags':
-                    return super().__new__(
-                        cls,
-                        _arg,
-                        _configuration=_configuration,
-                    )
-            
-                def __getitem__(self, i: int) -> MetaOapg.items:
-                    return super().__getitem__(i)
-            normalized = schemas.BoolSchema
+            wallet_address = schemas.StrSchema
             __annotations__ = {
-                "collection_address": collection_address,
-                "sub_collection_tags": sub_collection_tags,
-                "normalized": normalized,
+                "wallet_address": wallet_address,
             }
     
-    collection_address: MetaOapg.properties.collection_address
+    wallet_address: MetaOapg.properties.wallet_address
     
     @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["collection_address"]) -> MetaOapg.properties.collection_address: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["sub_collection_tags"]) -> MetaOapg.properties.sub_collection_tags: ...
-    
-    @typing.overload
-    def __getitem__(self, name: typing_extensions.Literal["normalized"]) -> MetaOapg.properties.normalized: ...
+    def __getitem__(self, name: typing_extensions.Literal["wallet_address"]) -> MetaOapg.properties.wallet_address: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["collection_address", "sub_collection_tags", "normalized", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["wallet_address", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["collection_address"]) -> MetaOapg.properties.collection_address: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["sub_collection_tags"]) -> typing.Union[MetaOapg.properties.sub_collection_tags, schemas.Unset]: ...
-    
-    @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["normalized"]) -> typing.Union[MetaOapg.properties.normalized, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["wallet_address"]) -> MetaOapg.properties.wallet_address: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["collection_address", "sub_collection_tags", "normalized", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["wallet_address", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        collection_address: typing.Union[MetaOapg.properties.collection_address, list, tuple, ],
-        sub_collection_tags: typing.Union[MetaOapg.properties.sub_collection_tags, list, tuple, schemas.Unset] = schemas.unset,
-        normalized: typing.Union[MetaOapg.properties.normalized, bool, schemas.Unset] = schemas.unset,
+        wallet_address: typing.Union[MetaOapg.properties.wallet_address, str, ],
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'SchemaForRequestBodyApplicationJson':
         return super().__new__(
             cls,
             *_args,
-            collection_address=collection_address,
-            sub_collection_tags=sub_collection_tags,
-            normalized=normalized,
+            wallet_address=wallet_address,
             _configuration=_configuration,
             **kwargs,
         )
@@ -155,9 +89,6 @@ request_body_any_type = api_client.RequestBody(
             schema=SchemaForRequestBodyApplicationJson),
     },
 )
-_auth = [
-    'api_key',
-]
 
 
 @dataclass
@@ -199,11 +130,6 @@ class ApiResponseFor403(api_client.ApiResponse):
 _response_for_403 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor403,
 )
-_status_code_to_response = {
-    '200': _response_for_200,
-    '400': _response_for_400,
-    '403': _response_for_403,
-}
 _all_accept_content_types = (
     'application/json',
 )
@@ -211,7 +137,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _get_eth_marketplace_data_oapg(
+    def _get_eth_wallet_valuation_oapg(
         self,
         content_type: typing_extensions.Literal["application/json"] = ...,
         body: typing.Union[SchemaForRequestBodyApplicationJson, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
@@ -224,7 +150,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _get_eth_marketplace_data_oapg(
+    def _get_eth_wallet_valuation_oapg(
         self,
         content_type: str = ...,
         body: typing.Union[SchemaForRequestBodyApplicationJson, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
@@ -238,7 +164,7 @@ class BaseApi(api_client.Api):
 
 
     @typing.overload
-    def _get_eth_marketplace_data_oapg(
+    def _get_eth_wallet_valuation_oapg(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         content_type: str = ...,
@@ -249,7 +175,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _get_eth_marketplace_data_oapg(
+    def _get_eth_wallet_valuation_oapg(
         self,
         content_type: str = ...,
         body: typing.Union[SchemaForRequestBodyApplicationJson, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
@@ -262,7 +188,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _get_eth_marketplace_data_oapg(
+    def _get_eth_wallet_valuation_oapg(
         self,
         content_type: str = 'application/json',
         body: typing.Union[SchemaForRequestBodyApplicationJson, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
@@ -272,7 +198,7 @@ class BaseApi(api_client.Api):
         skip_deserialization: bool = False,
     ):
         """
-        Collection Summary by Marketplace
+        Value All Tokens Owned by Wallet
         :param skip_deserialization: If true then api_response.response will be set but
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
@@ -324,11 +250,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class GetEthMarketplaceData(BaseApi):
+class GetEthWalletValuation(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def get_eth_marketplace_data(
+    def get_eth_wallet_valuation(
         self,
         content_type: typing_extensions.Literal["application/json"] = ...,
         body: typing.Union[SchemaForRequestBodyApplicationJson, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
@@ -341,7 +267,7 @@ class GetEthMarketplaceData(BaseApi):
     ]: ...
 
     @typing.overload
-    def get_eth_marketplace_data(
+    def get_eth_wallet_valuation(
         self,
         content_type: str = ...,
         body: typing.Union[SchemaForRequestBodyApplicationJson, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
@@ -355,7 +281,7 @@ class GetEthMarketplaceData(BaseApi):
 
 
     @typing.overload
-    def get_eth_marketplace_data(
+    def get_eth_wallet_valuation(
         self,
         skip_deserialization: typing_extensions.Literal[True],
         content_type: str = ...,
@@ -366,7 +292,7 @@ class GetEthMarketplaceData(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def get_eth_marketplace_data(
+    def get_eth_wallet_valuation(
         self,
         content_type: str = ...,
         body: typing.Union[SchemaForRequestBodyApplicationJson, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
@@ -379,7 +305,7 @@ class GetEthMarketplaceData(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def get_eth_marketplace_data(
+    def get_eth_wallet_valuation(
         self,
         content_type: str = 'application/json',
         body: typing.Union[SchemaForRequestBodyApplicationJson, dict, frozendict.frozendict, schemas.Unset] = schemas.unset,
@@ -388,7 +314,7 @@ class GetEthMarketplaceData(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._get_eth_marketplace_data_oapg(
+        return self._get_eth_wallet_valuation_oapg(
             body=body,
             content_type=content_type,
             accept_content_types=accept_content_types,
@@ -462,7 +388,7 @@ class ApiForpost(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._get_eth_marketplace_data_oapg(
+        return self._get_eth_wallet_valuation_oapg(
             body=body,
             content_type=content_type,
             accept_content_types=accept_content_types,

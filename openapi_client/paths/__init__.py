@@ -76,6 +76,7 @@ class PathValues(str, enum.Enum):
     INSIGHTS_ETH_GET_TOKEN_FORECASTS = "/insights/eth/getTokenForecasts"
     INSIGHTS_ETH_GET_TOKEN_APPRAISAL = "/insights/eth/getTokenAppraisal"
     INSIGHTS_ETH_GET_WALLET_LABELS = "/insights/eth/getWalletLabels"
+    INSIGHTS_ETH_GET_WALLET_VALUATION = "/insights/eth/getWalletValuation"
     INSIGHTS_SOL_GET_CUSTOM_COLLECTION_RISK = "/insights/sol/getCustomCollectionRisk"
     INSIGHTS_SOL_GET_CUSTOM_TOKEN_RISK = "/insights/sol/getCustomTokenRisk"
     INSIGHTS_SOL_GET_DEFAULT_COLLECTION_RISK = "/insights/sol/getDefaultCollectionRisk"
