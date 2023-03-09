@@ -27,6 +27,8 @@ from openapi_client.paths.data_eth_get_ens_lookup.post import GetEthEnsLookup
 from openapi_client.paths.data_eth_get_historical_events.post import GetEthHistoricalEvents
 from openapi_client.paths.data_eth_get_historical_transactions.post import GetEthHistoricalTransactions
 from openapi_client.paths.analytics_eth_get_leader_board.post import GetEthLeaderBoard
+from openapi_client.paths.data_eth_get_live_listings.post import GetEthLiveListings
+from openapi_client.paths.data_eth_get_live_offers.post import GetEthLiveOffers
 from openapi_client.paths.data_eth_get_marketplace_data.post import GetEthMarketplaceData
 from openapi_client.paths.data_eth_get_marketplace_floor_price.post import GetEthMarketplaceFloorPrice
 from openapi_client.paths.data_eth_get_marketplace_trait_data.post import GetEthMarketplaceTraitData
@@ -62,6 +64,8 @@ class EthereumApi(
     GetEthHistoricalEvents,
     GetEthHistoricalTransactions,
     GetEthLeaderBoard,
+    GetEthLiveListings,
+    GetEthLiveOffers,
     GetEthMarketplaceData,
     GetEthMarketplaceFloorPrice,
     GetEthMarketplaceTraitData,

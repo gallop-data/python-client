@@ -200,6 +200,8 @@ Class | Method | HTTP request | Description
 *EthereumApi* | [**get_eth_historical_events**](docs/apis/tags/EthereumApi.md#get_eth_historical_events) | **post** /data/eth/getHistoricalEvents | Marketplace Activity by Collection
 *EthereumApi* | [**get_eth_historical_transactions**](docs/apis/tags/EthereumApi.md#get_eth_historical_transactions) | **post** /data/eth/getHistoricalTransactions | Historical Transactions by Collection
 *EthereumApi* | [**get_eth_leader_board**](docs/apis/tags/EthereumApi.md#get_eth_leader_board) | **post** /analytics/eth/getLeaderBoard | Ethereum Leaderboard by Collection
+*EthereumApi* | [**get_eth_live_listings**](docs/apis/tags/EthereumApi.md#get_eth_live_listings) | **post** /data/eth/getLiveListings | Collection live listings
+*EthereumApi* | [**get_eth_live_offers**](docs/apis/tags/EthereumApi.md#get_eth_live_offers) | **post** /data/eth/getLiveOffers | Collection live offers
 *EthereumApi* | [**get_eth_marketplace_data**](docs/apis/tags/EthereumApi.md#get_eth_marketplace_data) | **post** /data/eth/getMarketplaceData | Collection Summary by Marketplace
 *EthereumApi* | [**get_eth_marketplace_floor_price**](docs/apis/tags/EthereumApi.md#get_eth_marketplace_floor_price) | **post** /data/eth/getMarketplaceFloorPrice | Marketplace Floor Price by Collection
 *EthereumApi* | [**get_eth_marketplace_trait_data**](docs/apis/tags/EthereumApi.md#get_eth_marketplace_trait_data) | **post** /data/eth/getMarketplaceTraitData | Collection Listings by Trait &amp; Marketplace

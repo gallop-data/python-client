@@ -11,6 +11,8 @@ class PathValues(str, enum.Enum):
     DATA_ETH_GET_COLLECTION_TRANSACTIONS = "/data/eth/getCollectionTransactions"
     DATA_ETH_GET_TOKEN_TRANSACTIONS = "/data/eth/getTokenTransactions"
     DATA_ETH_GET_MARKETPLACE_DATA = "/data/eth/getMarketplaceData"
+    DATA_ETH_GET_LIVE_LISTINGS = "/data/eth/getLiveListings"
+    DATA_ETH_GET_LIVE_OFFERS = "/data/eth/getLiveOffers"
     DATA_ETH_GET_MARKETPLACE_TRAIT_DATA = "/data/eth/getMarketplaceTraitData"
     DATA_ETH_GET_WALLET_NFTS = "/data/eth/getWalletNFTs"
     DATA_ETH_GET_WALLET_TRANSACTIONS = "/data/eth/getWalletTransactions"

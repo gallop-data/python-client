@@ -6,6 +6,8 @@ from openapi_client.apis.paths.data_eth_get_tokens import DataEthGetTokens
 from openapi_client.apis.paths.data_eth_get_collection_transactions import DataEthGetCollectionTransactions
 from openapi_client.apis.paths.data_eth_get_token_transactions import DataEthGetTokenTransactions
 from openapi_client.apis.paths.data_eth_get_marketplace_data import DataEthGetMarketplaceData
+from openapi_client.apis.paths.data_eth_get_live_listings import DataEthGetLiveListings
+from openapi_client.apis.paths.data_eth_get_live_offers import DataEthGetLiveOffers
 from openapi_client.apis.paths.data_eth_get_marketplace_trait_data import DataEthGetMarketplaceTraitData
 from openapi_client.apis.paths.data_eth_get_wallet_nfts import DataEthGetWalletNFTs
 from openapi_client.apis.paths.data_eth_get_wallet_transactions import DataEthGetWalletTransactions
@@ -96,6 +98,8 @@ PathToApi = typing_extensions.TypedDict(
         PathValues.DATA_ETH_GET_COLLECTION_TRANSACTIONS: DataEthGetCollectionTransactions,
         PathValues.DATA_ETH_GET_TOKEN_TRANSACTIONS: DataEthGetTokenTransactions,
         PathValues.DATA_ETH_GET_MARKETPLACE_DATA: DataEthGetMarketplaceData,
+        PathValues.DATA_ETH_GET_LIVE_LISTINGS: DataEthGetLiveListings,
+        PathValues.DATA_ETH_GET_LIVE_OFFERS: DataEthGetLiveOffers,
         PathValues.DATA_ETH_GET_MARKETPLACE_TRAIT_DATA: DataEthGetMarketplaceTraitData,
         PathValues.DATA_ETH_GET_WALLET_NFTS: DataEthGetWalletNFTs,
         PathValues.DATA_ETH_GET_WALLET_TRANSACTIONS: DataEthGetWalletTransactions,
@@ -187,6 +191,8 @@ path_to_api = PathToApi(
         PathValues.DATA_ETH_GET_COLLECTION_TRANSACTIONS: DataEthGetCollectionTransactions,
         PathValues.DATA_ETH_GET_TOKEN_TRANSACTIONS: DataEthGetTokenTransactions,
         PathValues.DATA_ETH_GET_MARKETPLACE_DATA: DataEthGetMarketplaceData,
+        PathValues.DATA_ETH_GET_LIVE_LISTINGS: DataEthGetLiveListings,
+        PathValues.DATA_ETH_GET_LIVE_OFFERS: DataEthGetLiveOffers,
         PathValues.DATA_ETH_GET_MARKETPLACE_TRAIT_DATA: DataEthGetMarketplaceTraitData,
         PathValues.DATA_ETH_GET_WALLET_NFTS: DataEthGetWalletNFTs,
         PathValues.DATA_ETH_GET_WALLET_TRANSACTIONS: DataEthGetWalletTransactions,
