@@ -34,6 +34,9 @@ class SchemaForRequestBodyApplicationJson(
 
 
     class MetaOapg:
+        required = {
+            "wallet_address",
+        }
         
         class properties:
             wallet_address = schemas.StrSchema
@@ -66,6 +69,8 @@ class SchemaForRequestBodyApplicationJson(
                 "page_size": page_size,
             }
     
+    wallet_address: MetaOapg.properties.wallet_address
+    
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["wallet_address"]) -> MetaOapg.properties.wallet_address: ...
     
@@ -84,7 +89,7 @@ class SchemaForRequestBodyApplicationJson(
     
     
     @typing.overload
-    def get_item_oapg(self, name: typing_extensions.Literal["wallet_address"]) -> typing.Union[MetaOapg.properties.wallet_address, schemas.Unset]: ...
+    def get_item_oapg(self, name: typing_extensions.Literal["wallet_address"]) -> MetaOapg.properties.wallet_address: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["page"]) -> typing.Union[MetaOapg.properties.page, schemas.Unset]: ...
@@ -102,7 +107,7 @@ class SchemaForRequestBodyApplicationJson(
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
-        wallet_address: typing.Union[MetaOapg.properties.wallet_address, str, schemas.Unset] = schemas.unset,
+        wallet_address: typing.Union[MetaOapg.properties.wallet_address, str, ],
         page: typing.Union[MetaOapg.properties.page, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         page_size: typing.Union[MetaOapg.properties.page_size, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,

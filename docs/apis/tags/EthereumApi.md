@@ -2075,6 +2075,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         token_id="2868",
         page=1,
         page_size=100,
+        event_date="2023-01-15",
         event_type="sale",
     )
     try:
@@ -2112,6 +2113,7 @@ Key | Input Type | Accessed Type | Description | Notes
 **token_id** | str,  | str,  | The id for the token. | [optional] 
 **page** | decimal.Decimal, int,  | decimal.Decimal,  | The pagination cursor. | [optional] 
 **page_size** | decimal.Decimal, int,  | decimal.Decimal,  | The number of records returned per page. | [optional] must be one of [50, 100, 500, 1000, ] 
+**event_date** | str,  | str,  | Only return events occuring after this day [YYYY-MM-DD] | [optional] 
 **event_type** | str,  | str,  | The type of event: list, transfer, offer, mint, sale, cancel_list or cancel_offer | [optional] must be one of ["list", "transfer", "offer", "mint", "sale", "cancel_list", "cancel_offer", ] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]
 
@@ -4124,7 +4126,7 @@ dict, frozendict.frozendict,  | frozendict.frozendict,  |  |
 ### Dictionary Keys
 Key | Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | ------------- | -------------
-**wallet_address** | str,  | str,  | The wallet address to search. | [optional] 
+**wallet_address** | str,  | str,  | The wallet address to search. | 
 **page** | decimal.Decimal, int,  | decimal.Decimal,  | The pagination cursor. | [optional] 
 **page_size** | decimal.Decimal, int,  | decimal.Decimal,  | The number of records returned per page. | [optional] must be one of [50, 100, 500, 1000, ] 
 **any_string_name** | dict, frozendict.frozendict, str, date, datetime, int, float, bool, decimal.Decimal, None, list, tuple, bytes, io.FileIO, io.BufferedReader | frozendict.frozendict, str, BoolClass, decimal.Decimal, NoneClass, tuple, bytes, FileIO | any string name can be used but the value must be the correct type | [optional]

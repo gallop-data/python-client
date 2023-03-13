@@ -64,6 +64,7 @@ class SchemaForRequestBodyApplicationJson(
                 @schemas.classproperty
                 def POSITIVE_1000(cls):
                     return cls(1000)
+            event_date = schemas.StrSchema
             
             
             class event_type(
@@ -103,6 +104,7 @@ class SchemaForRequestBodyApplicationJson(
                 "token_id": token_id,
                 "page": page,
                 "page_size": page_size,
+                "event_date": event_date,
                 "event_type": event_type,
             }
     
@@ -121,12 +123,15 @@ class SchemaForRequestBodyApplicationJson(
     def __getitem__(self, name: typing_extensions.Literal["page_size"]) -> MetaOapg.properties.page_size: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["event_date"]) -> MetaOapg.properties.event_date: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["event_type"]) -> MetaOapg.properties.event_type: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["collection_address", "token_id", "page", "page_size", "event_type", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["collection_address", "token_id", "page", "page_size", "event_date", "event_type", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -144,12 +149,15 @@ class SchemaForRequestBodyApplicationJson(
     def get_item_oapg(self, name: typing_extensions.Literal["page_size"]) -> typing.Union[MetaOapg.properties.page_size, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["event_date"]) -> typing.Union[MetaOapg.properties.event_date, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["event_type"]) -> typing.Union[MetaOapg.properties.event_type, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["collection_address", "token_id", "page", "page_size", "event_type", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["collection_address", "token_id", "page", "page_size", "event_date", "event_type", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -160,6 +168,7 @@ class SchemaForRequestBodyApplicationJson(
         token_id: typing.Union[MetaOapg.properties.token_id, str, schemas.Unset] = schemas.unset,
         page: typing.Union[MetaOapg.properties.page, decimal.Decimal, int, schemas.Unset] = schemas.unset,
         page_size: typing.Union[MetaOapg.properties.page_size, decimal.Decimal, int, schemas.Unset] = schemas.unset,
+        event_date: typing.Union[MetaOapg.properties.event_date, str, schemas.Unset] = schemas.unset,
         event_type: typing.Union[MetaOapg.properties.event_type, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -171,6 +180,7 @@ class SchemaForRequestBodyApplicationJson(
             token_id=token_id,
             page=page,
             page_size=page_size,
+            event_date=event_date,
             event_type=event_type,
             _configuration=_configuration,
             **kwargs,
